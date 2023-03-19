@@ -9,11 +9,9 @@
 <p align="center">
 A lightweight and easy-to-use Python implementation of the Finite Element Method (FEM). Perform first-order elastic analyses of any 3-D frame structure and visualize results with a fully interactive web browser interface.
 </p>
-<div align="center">
-  <img src="https://raw.githubusercontent.com/wcfrobert/fapp/master/docs/demo.gif" alt="logo" style="width:100%;"/>
-</div>
 
 
+![demo](https://raw.githubusercontent.com/wcfrobert/fapp/master/docs/demo.gif)
 
 
 
