@@ -1,20 +1,20 @@
-<img src="https://github.com/wcfrobert/fapp/blob/master/docs/logo.png?raw=true" alt="logo" style="zoom:50%;" />
+<h1 align="center">
+  <br>
+  <img src="https://github.com/wcfrobert/fapp/blob/master/docs/logo2.png?raw=true" alt="logo" style="zoom:50%;" />
+  <br>
+  Frame Analysis Program in Python
+  <br>
+</h1>
+
 
 A lightweight and incredibly <u>easy-to-use</u> Python implementation of the Finite Element Method (FEM). Perform quick first-order elastic frame analyses right in Python.
 
-[INSERT DEMO GIF]
+<img src="https://github.com/wcfrobert/fapp/blob/master/docs/demo.gif?raw=true" alt="logo" style="zoom:50%;" />
 
 - [Introduction](#introduction)
 - [Quick Start](#quick-start)
 - [Installation](#installation)
 - [Usage](#usage)
-  * [Step 0: Instantiate analysis object](#step-0--instantiate-analysis-object)
-  * [Step 1: Add nodes](#step-1--add-nodes)
-  * [Step 2: Add elements](#step-2--add-elements)
-  * [Step 3: Add fixity](#step-3--add-fixity)
-  * [Step 4: Add Loading](#step-4--add-loading)
-  * [Step 5: Solve And Post-Process](#step-5--solve-and-post-process)
-  * [Step 6: Visualize](#step-6--visualize)
 - [Notes and Assumptions](#notes-and-assumptions)
 - [License](#license)
 
@@ -368,7 +368,7 @@ There are currently three visualization options:
 * structure: {fapp.Analysis}
   * Pass in the structure you want to visualize
 
-[INSERT SAMPLE]
+<img src="https://github.com/wcfrobert/fapp/blob/master/docs/plot.png?raw=true" alt="logo" style="zoom:50%;" />
 
 * Node hoverinfo shows tag, xyz coordinate, fixity, and loading
 * Element hoverinfo shows tag, start and end node, length, member loading, and member rotation
@@ -395,7 +395,7 @@ There are currently three visualization options:
 * show_value: boolean (optional)
   * Show force diagram magnitude at the two ends. Gets quite cluttered so it is off by default. Default = False
 
-[INSERT SAMPLE]
+<img src="https://github.com/wcfrobert/fapp/blob/master/docs/plot_results.png?raw=true" alt="logo" style="zoom:50%;" />
 
 * Node hoverinfo shows tag, displacements, and reactions if applicable
 * Element hoverinfo shows tag, and element end forces
@@ -411,7 +411,7 @@ There are currently three visualization options:
 * ele_tag: int
   * Element tag to identify which element you would like to plot
 
-[INSERT SAMPLE]
+<img src="https://github.com/wcfrobert/fapp/blob/master/docs/plot_diagram.png?raw=true" alt="logo" style="zoom:50%;" />
 
 * You may click on the legend to show/hide the diagrams you wish to see.
 
@@ -421,7 +421,7 @@ There are currently three visualization options:
 
 ## Notes and Assumptions
 
-[INSERT DEFAULT COORDINATE ASSUMPTION SNIP]
+<img src="https://github.com/wcfrobert/fapp/blob/master/docs/coordinate.png?raw=true" alt="logo" style="zoom:50%;" />
 
 * Global Coordinate (X, Y, Z): 
   * Y is the vertical axis (Elevation)
