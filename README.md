@@ -1,13 +1,14 @@
 <h1 align="center">
   <br>
-  <img src="https://github.com/wcfrobert/fapp/blob/master/docs/logo2.png?raw=true" alt="logo" style="zoom:50%;" />
+  <img src="https://github.com/wcfrobert/fapp/blob/master/docs/logo.png?raw=true" alt="logo" style="zoom:50%;" />
   <br>
   Frame Analysis Program in Python
   <br>
 </h1>
 
-
-A lightweight and incredibly <u>easy-to-use</u> Python implementation of the Finite Element Method (FEM). Perform quick first-order elastic frame analyses right in Python.
+<p align="center">
+A lightweight and <u>easy-to-use</u> Python implementation of the Finite Element Method (FEM). Suitable for most structural engineering use cases. Perform first-order elastic frame analyses of any 3-D frame structure and visualize with a fully interactive Plotly interface.
+</p>
 
 <img src="https://github.com/wcfrobert/fapp/blob/master/docs/demo.gif?raw=true" alt="logo" style="zoom:50%;" />
 
@@ -353,7 +354,7 @@ my_structure.DEFL[3, :]
 
 The use of Spyder's variable explorer is highly recommended!
 
-[INSERT SCREENSHOT OF SPYDER]
+<img src="https://github.com/wcfrobert/fapp/blob/master/docs/spyder.png?raw=true" alt="logo" style="zoom:50%;" />
 
 
 
@@ -417,6 +418,13 @@ There are currently three visualization options:
 
 
 
+Most optimal navigation:
+
+* left mouse button - click and drag to orbit
+* right mouse button - click and drag to pan
+* mouse wheel - zoom
+* Note on turntable navigation. By default, Plotly assumes vertical axis along Z for its turntable navigation. Clicking on it will flip the structure. You can revert it back by clicking the axonometric camera view button. As far as I can tell, it is not possible to change this default setting in Plotly
+
 
 
 ## Notes and Assumptions
@@ -427,7 +435,7 @@ There are currently three visualization options:
   * Y is the vertical axis (Elevation)
   * X and Z are the axes within the horizontal plane (Plan)
   * Recommend modeling 2-D plane structures in the X-Y plane
-  * Recommend modeling 2D floor grids in the X-Z plane
+  * Recommend modeling 2-D floor grids in the X-Z plane
 * Local Coordinate (x, y, z):
   * x-axis = element longitudinal axis
   * z-axis = element major bending axis (relevant section properties: Iz, Ayy)
