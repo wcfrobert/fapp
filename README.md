@@ -1,16 +1,15 @@
 <h1 align="center">
   <br>
-  <img src="https://github.com/wcfrobert/fapp/blob/master/docs/logo.png?raw=true" alt="logo" style="zoom:50%;" />
+  <img src="https://raw.githubusercontent.com/wcfrobert/fapp/master/docs/logo.png" alt="logo" style="zoom:50%;" />
   <br>
   Frame Analysis Program in Python
   <br>
 </h1>
 
 <p align="center">
-A lightweight and <u>easy-to-use</u> Python implementation of the Finite Element Method (FEM). Suitable for most structural engineering use cases. Perform first-order elastic frame analyses of any 3-D frame structure and visualize with a fully interactive Plotly interface.
+A lightweight and easy-to-use Python implementation of the Finite Element Method (FEM). Perform first-order elastic analyses of any 3-D frame structure and visualize results with a fully interactive web browser interface.
 </p>
-
-<img src="https://github.com/wcfrobert/fapp/blob/master/docs/demo.gif?raw=true" alt="logo" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/wcfrobert/fapp/master/docs/demo.gif" alt="logo" style="zoom:100%;" align="center"/>
 
 - [Introduction](#introduction)
 - [Quick Start](#quick-start)
@@ -22,79 +21,67 @@ A lightweight and <u>easy-to-use</u> Python implementation of the Finite Element
 
 ## Introduction
 
-fapp (pronounced "F - app"), stands for Frame Analysis Program in Python. As the name suggests, only line elements are supported at this time (no surface or solid elements). The entire code base is only about 500 lines (not counting comments and the visualization functionalities). I'm sure you'll probably find it satisfactory for most use-cases within the context of structural engineering. It was a joy to develop and I hope you'll love how simple it is to use!
-
-The module has an object-oriented design that is quite intuitive. I made a conscious effort during development to keep things pedagogically easy to understand. I hope it will serve as excellent reference material for educators looking for a python implementation of the direct stiffness method. 
+fapp, pronounced "F - app", stands for Frame Analysis Program in Python. As the name suggests, only line elements are currently supported (no surface or solid elements). 
 
 * Analyze any 3-D frame structures
 * Timoshenko beam elements with shear deformation
 * First-order elastic analyses
-* Nodal and member loads
+* Nodal and uniform member loads
 * Imposed displacements
 * Object-oriented design. Easy to access and store results.
 * Beautiful and fully interactive visualization in your web browser. Pan, zoom, orbit, and hover.
 
-Disclaimer: this package is meant for personal or educational use only. As evident from the empty "\tests" folder, fapp is NOT robust enough to be used for commercial purposes of any kind! I'm sure the results are correct for typical use, but there are plenty of edge cases that I simply haven't had the chance to explore/debug.
+Features are somewhat limited in its current implementation but I'm sure you'll find it satisfactory for 95% of use-cases within the context of structural engineering. The entire source code is only around 500 lines if you don't count comments and the visualization functionalities. It was a joy to develop and I hope you'll love how simple it is to use!
+
+fapp features an object-oriented design that is quite intuitive. I made a conscious effort during development to keep things pedagogically clear. I hope it will serve as excellent reference material for educators looking for a python implementation of the direct stiffness method. 
+
+Disclaimer: this package is meant for <u>personal or educational use only</u>. As evident from the empty "\tests" folder, fapp is NOT robust enough to be used for commercial purposes of any kind! There are plenty of edge cases that I simply haven't had the time to explore/debug.
 
 
 
-## Quick Start
+## Quick Start Example
 
-**Step 0:** Installation. See "Installation" section below for more info
+**Installation**
 
-* For casual users, simply install Anaconda Python, download this module, and open "main.py" in Spyder IDE. The following open source packages are used in this project:
-  * Numpy
-  * Scipy
-  * Plotly 
+See "Installation" section below for more info. For casual users, simply use Anaconda Python, download this module, and open "main.py" in Spyder IDE. The following open source packages are used in this project:
 
+* Numpy
+* Scipy
+* Plotly 
 
-**Step 1:** Import fapp and initialize structure
+**Using fapp**
 
 ```python
-# import
+# import fapp
 import fapp.analysis as fpa
 import fapp.plotter as fpp
 
 # initialize structure
 my_structure = fpa.Analysis()
-```
 
-**Step 2:** Define nodes and elements
-
-```python
-# node tag must be defined chronologically from 0 to N.
+# define nodes
 my_structure.add_node(node_tag=0, x=0, y=0, z=0)
 my_structure.add_node(node_tag=1, x=0, y=4000, z=0)
 my_structure.add_node(node_tag=2, x=12000, y=7000, z=0)
 my_structure.add_node(node_tag=3, x=12000, y=0, z=0)
 
-# element tag must be defined chronologically from 0 to N
+# define elements
 my_structure.add_element(ele_tag=0, i_tag=0, j_tag=1, A=2e4, Ayy=2e4, Azz=2e4, Iy=999, Iz=1.5e9, J=999, E=200, v=0.3, beta=0)
 my_structure.add_element(ele_tag=1, i_tag=1, j_tag=2, A=4e4, Ayy=4e4, Azz=4e4, Iy=999, Iz=3.8e9, J=999, E=200, v=0.3, beta=0)
 my_structure.add_element(ele_tag=2, i_tag=2, j_tag=3, A=2e4, Ayy=2e4, Azz=2e4, Iy=999, Iz=1.5e9, J=999, E=200, v=0.3, beta=0)
-```
 
-**Step 3:** Define fixity and loading
-
-```python
-# define fixity - 0 = fixed, "nan" = free, float = prescribed displacement
+# define fixity
 my_structure.add_fixity(node_tag=0, ux=0, uy=0, uz=0, rx=0, ry=0, rz=0)
 my_structure.add_fixity(node_tag=3, ux=0, uy=0, uz=0)
 
-# define loading - nodal or member loads
+# define loading
 my_structure.add_load_member(ele_tag=1, wx=-0.00363, wy=-0.01455, wz=0)
 my_structure.add_load_nodal(node_tag=1, Fx=5, Fy=0, Fz=0, Mx=0, My=0, Mz=0)
-```
 
-**Step 4:** Run analysis
-
-```python
+# start analysis
 my_structure.solve()
-```
 
-**Step 5:** Visualize results
-
-```python
+# visualize results
 fig1 = fpp.plot(my_structure)
 fig2 = fpp.plot_results(my_structure, display="d")
 fig3 = fpp.plot_diagrams(my_structure, ele_tag=0)
