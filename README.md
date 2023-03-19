@@ -98,7 +98,7 @@ fig3.show()
 
 **<u>Option 1: Anaconda Python Distribution</u>**
 
-For the casual users, Anaconda Python distribution is recommended. This is by far the easiest method of installation. Users don't need to worry about dependency management and setting up virtual environments. The following open source packages are used in this project:
+For the casual users, using the base Anaconda Python environment is recommened. This is by far the easiest method of installation. Users don't need to worry about dependency management and setting up virtual environments. The following open source packages are used in this project:
 
 * Numpy
 * Scipy
@@ -108,39 +108,40 @@ Installation procedure:
 
 1. Download Anaconda python
 2. Download this package (click the green "Code" button and download zip file)
-3. Open "main.py" in Anaconda's Spyder IDE. Make sure working directory is correctly configured.
-4. Run
+3. Open and run "main.py" in Anaconda's Spyder IDE. Make sure working directory is correctly configured.
 
 **<u>Option 2: Command Prompt + Plain Python</u>**
 
-Pip install is available.
+1. Download this project to a folder of your choosing
+    ```
+    git clone https://github.com/wcfrobert/fapp.git
+    ```
+2. Change directory into where you downloaded fapp
+    ```
+    cd fapp
+    ```
+3. Create virtual environment
+    ```
+    py -m venv venv
+    ```
+4. Activate virtual environment
+    ```
+    venv\Scripts\activate
+    ```
+5. Install requirements
+    ```
+    pip install -r requirements.txt
+    ```
+6. run fapp
+    ```
+    py main.py
+    ```
+
+Note that pip install is available.
 
 ```
 pip install fapp
 ```
-
-Alternatively:
-
-1. Download this project to a folder of your choosing
-    ```
-    git clone https://github.com/wcfrobert/wcfrobert.github.io
-    ```
-2. Create virtual environment
-    ```
-    py -m venv venv
-    ```
-3. Activate virtual environment
-    ```
-    venv/Scripts/activate
-    ```
-4. Install requirements
-    ```
-    pip install -r requirements.txt
-    ```
-5. run fapp
-    ```
-    py main.py
-    ```
 
 
 
