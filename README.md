@@ -1,12 +1,23 @@
-<img src="C:\Users\wcfro\OneDrive\Desktop\Personal Projects\fapp\docs\logo.png" alt="logo" style="zoom:50%;" />
-
-[INSERT LOGO]
+<img src="https://github.com/wcfrobert/fapp/blob/master/docs/logo.png?raw=true" alt="logo" style="zoom:50%;" />
 
 A lightweight and incredibly <u>easy-to-use</u> Python implementation of the Finite Element Method (FEM). Perform quick first-order elastic frame analyses right in Python.
 
 [INSERT DEMO GIF]
 
-[INSERT TABLE OF CONTENT]
+- [Introduction](#introduction)
+- [Quick Start](#quick-start)
+- [Installation](#installation)
+- [Usage](#usage)
+  * [Step 0: Instantiate analysis object](#step-0--instantiate-analysis-object)
+  * [Step 1: Add nodes](#step-1--add-nodes)
+  * [Step 2: Add elements](#step-2--add-elements)
+  * [Step 3: Add fixity](#step-3--add-fixity)
+  * [Step 4: Add Loading](#step-4--add-loading)
+  * [Step 5: Solve And Post-Process](#step-5--solve-and-post-process)
+  * [Step 6: Visualize](#step-6--visualize)
+- [Notes and Assumptions](#notes-and-assumptions)
+- [License](#license)
+
 
 ## Introduction
 
