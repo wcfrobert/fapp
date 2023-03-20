@@ -32,10 +32,8 @@ fapp, pronounced "F - app", stands for Frame Analysis Program in Python. As the 
 * First-order elastic analyses
 * Nodal and uniform member loads
 * Imposed displacements
-* Object-oriented design. Easy to access and store results.
-* Beautiful and fully interactive visualization in your web browser. Pan, zoom, orbit, and hover.
 
-Features are somewhat limited in its current implementation but I'm sure you'll find it satisfactory for 95% of use-cases in structural engineering. The entire source code is only around 500 lines if you don't count comments and the visualization functionalities. It was a joy to develop and I hope you'll love how simple it is to use!
+Features are somewhat limited in its current implementation but I'm sure you'll find it satisfactory for most basic use cases in structural engineering. The entire source code is only around 500 lines if you don't count comments and the visualization functionalities. It was a joy to develop and I hope you'll love how simple it is to use!
 
 I made a conscious effort to keep things pedagogically clear and concise during development. I hope it will serve as excellent reference material for educators looking for a python implementation of the direct stiffness method. 
 
