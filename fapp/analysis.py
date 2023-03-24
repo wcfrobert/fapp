@@ -27,8 +27,7 @@ class Analysis():
         ERROR                           back calculated P_structure vector to quantify error
         SOLUTION_FLAG                   0 = failed or not solved yet. 1 = success
         
-        linear system of equations: {P} - {FEF} = [K]{d}. The matrix and vectors are partitioned and
-        rearranged to ensure symmetric positive definite matrix before using conjugate gradient method.
+        linear system of equations: {P} - {FEF} = [K]{d}. The matrix and vectors are partitioned prior to solving.
         subscript f = free DOF, s = fixed DOF, n = prescribed DOF
         
             kff, kfn, kfs, knf, knn, kns, ksf, ksn, kss     partitioned stiffness matrix
@@ -230,7 +229,7 @@ class Analysis():
                     if (type(fix) == int or type(fix) == float) and fix != 0:
                         self.dn = np.append(self.dn, fix)
 
-        # calculate free disp (df) via iterative method in scipy. Faster and most robust than direct solver
+        # calculate free disp (df) via scipy
         self.df = scipy.sparse.linalg.dsolve.spsolve(self.kff,self.Pf - self.feff - self.kfn @ self.dn, use_umfpack=True)
         
         # assemble DEFL matrix
