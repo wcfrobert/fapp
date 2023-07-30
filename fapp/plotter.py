@@ -1,7 +1,5 @@
 import numpy as np
 import plotly.graph_objects as go
-import plotly.io as pio
-pio.renderers.default = "browser"
 
 
 def plot(structure):

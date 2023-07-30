@@ -32,6 +32,8 @@ fig1 = fpp.plot(my_structure)
 fig2 = fpp.plot_results(my_structure, display="d")
 fig3 = fpp.plot_diagrams(my_structure, ele_tag=1)
 
+import plotly.io as pio
+pio.renderers.default='browser'
 fig1.show()
 fig2.show()
 fig3.show()
